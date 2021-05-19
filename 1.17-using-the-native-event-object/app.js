@@ -2,16 +2,39 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      lastName: '',
+      //fullname:''
     };
+  },
+  watch: {
+    counter (value) {
+      if(value > 50){
+        this.counter = 0
+      }
+    }
+    // name (value) {
+    //   if(value === ''){
+    //     this.fullname = ''
+    //   } else {
+    //     this.fullname = value + ' ' + this.lastName
+    //   }      
+    // },
+    // lastName (value) {
+    //   if(value === ''){
+    //     this.fullname = ''
+    //   } else {
+    //     this.fullname = this.name + ' ' + value 
+    //   }  
+    // }
   },
   computed: {
     fullname () {
       console.log('running again')
-      if(this.name === '') {
+      if(this.name === '' || this.lastName === '') {
         return ''
       }
-      return this.name + ' ' + 'Garcia'
+      return this.name + ' ' + this.lastName
     }
   },
   methods: {
@@ -37,5 +60,10 @@ const app = Vue.createApp({
     }
   }
 });
+
+/**
+ * Here commented is a watcher that does the samee as the computed method but needs more coding.
+ * So better using method. Still there is a case in which we would use a watcher and it's power.
+ */
 
 app.mount('#events');

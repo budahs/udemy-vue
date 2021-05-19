@@ -21,18 +21,10 @@
       <button v-on:click="add(10)">Add 10</button>
       <button v-on:click="reduce(5)">Subtract 5</button>
       <p>Result: {{ counter }}</p>
-      <!-- 
-        <input type="text" v-bind:value="name" v-on:input="setName($event, 'Schwarzmüller')"> 
-        // v-model pretty much substitutes v-bind and v-on directives (this is called "2 way binding")
-      -->
       <input type="text" v-model="name">
+      <input type="text" v-model="lastName">
       <button v-on:click="resetInput">Reset Input</button>
-      <p>Your Name: {{ fullname }}</p> 
-      <!-- 
-        important in computed methods we don't use () to call it vue does it and should be named like data property
-        They are used mostly for output values.
-        We don't use them for dinding in this case we still use methods
-      -->
+      <p>Your Name: {{ fullname }}</p>
     </section>
   </body>
 </html>
