@@ -27,7 +27,12 @@
       -->
       <input type="text" v-model="name">
       <button v-on:click="resetInput">Reset Input</button>
-      <p>Your Name: {{ outputFullName() }}</p>
+      <p>Your Name: {{ fullname }}</p> 
+      <!-- 
+        important in computed methods we don't use () to call it vue does it and should be named like data property
+        They are used mostly for output values.
+        We don't use them for dinding in this case we still use methods
+      -->
     </section>
   </body>
 </html>
