@@ -1,16 +1,20 @@
 <template>
-    <div>
-        <h2>Manage Goals</h2>
-        <input type="text" ref="goal" />
-        <button @click="setgoal">Set Goal</button>
-        <teleport to="body">
-            <error-alert v-if="inputIsInvalid">
-                <h2>Input is invalid</h2>
-                <p>Please enter at least a few characters</p>
-                <button @click="confirmError">Understood</button>
-            </error-alert>
-        </teleport>
-    </div>    
+    <!-- <div> -->
+    <!-- 
+        In Vue 2 after template was not possible to nest multiple html nodes there had to be one.
+        This now is ok in Vue 3 and is called fragments 
+     -->
+    <h2>Manage Goals</h2>
+    <input type="text" ref="goal" />
+    <button @click="setgoal">Set Goal</button>
+    <teleport to="body">
+        <error-alert v-if="inputIsInvalid">
+            <h2>Input is invalid</h2>
+            <p>Please enter at least a few characters</p>
+            <button @click="confirmError">Understood</button>
+        </error-alert>
+    </teleport>
+    <!-- </div>     -->
 </template>
 
 <script>
