@@ -6,7 +6,13 @@
     <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
     <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>  
     <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals> -->
-    <component :is="selectedComponent"></component>
+    <keep-alive>      
+      <component :is="selectedComponent"></component>
+    </keep-alive>    
+    <!-- 
+        In this example if we put text to the input and we change component the text disappears because the component is removed from the dom.
+        So the keep-alive prevents that from happening.
+       -->
   </div>
 </template>
 
