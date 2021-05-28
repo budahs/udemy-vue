@@ -48,6 +48,9 @@
       </div>
     </div>
     <div class="form-control">
+      <rating-control v-model="rating"></rating-control>
+    </div>
+    <div class="form-control">
       <div>
         <input id="confirm-terms" name="confirm-terms" type="checkbox" v-model="confirm" />
         <label for="confirm-terms">Agree terms of use?</label>
@@ -60,7 +63,11 @@
 </template>
 
 <script>
+import RatingControl from './RatingControl.vue'
 export default {
+  components: {
+    RatingControl
+  },
   data() {
     return {
       userName: '',
@@ -69,7 +76,8 @@ export default {
       interest: [],
       how:null,
       confirm: false,
-      userNameValidity: 'pending'
+      userNameValidity: 'pending',
+      rating: null
     }
   },
   methods: {
@@ -90,6 +98,8 @@ export default {
         this.how = null
         console.log('Confirm: ' + this.confirm)
         this.confirm = false
+        console.log('Rating: ' + this.rating)
+        this.rating = null
      },
      validateInput() {
        if(this.userName === ''){
