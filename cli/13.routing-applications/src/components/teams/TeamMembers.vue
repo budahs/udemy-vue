@@ -46,7 +46,7 @@ export default {
     this.loadTeamMembers(this.teamId)
   },
   watch: {
-    $teamId(newId) {
+    teamId(newId) {
       this.loadTeamMembers(newId)
     }
   }
