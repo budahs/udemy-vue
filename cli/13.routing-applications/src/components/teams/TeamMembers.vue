@@ -48,6 +48,7 @@ export default {
   },
   watch: {
     teamId(newId) {
+
       this.loadTeamMembers(newId)
     }
   }

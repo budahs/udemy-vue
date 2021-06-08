@@ -21,6 +21,7 @@ const router = createRouter({
         },
         { path: '/users',component: UsersList },
         { path: '/:notFound(.*)', component: NotFound}
+
     ],
     linkActiveClass: 'active'
 })
